@@ -1,13 +1,13 @@
 
-## Access list is a collection of crash codes for pentesting, collected in one place, created by [Undercode](https://undercode.help)
-![Access List](https://imgur.com/69WTtYi.png)
+## System crash is a collection of crash codes for pentesting, collected in one place, created by [Undercode](https://undercode.help)
+![Access List](https://imgur.com/cZEKg8y.png)
 - - - 
 
 ### Install
 
 **As Zip**
 ```
-wget -c https://github.com/undercodeutilities/systemcrash/archive/main.zip -O Accesslist.zip \
+wget -c https://github.com/undercodeutilities/systemcrash/archive/main.zip -O Systemcrash.zip \
   && unzip Access.zip \
   && rm -f Access.zip
 ```
