@@ -1,0 +1,18 @@
+A remote attacker could possibly use this issue to cause the LDAP server to crash, resulting in a denial of service. 
+Douglas Bagnall discovered that ldb, when used with Samba, incorrectly handled certain DN strings. 
+A remote attacker could use this issue to cause the LDAP server to crash, 
+resulting in a denial of service, or possibly execute arbitrary code. Various other issues were also addressed.
+
+diff --git a/lib/ldb/common/attrib_handlers.c b/lib/ldb/common/attrib_handlers.c
+index 11921ca429c4e0615cf36ef6960cf47e9c3a376d..81a74584bcbb2f1a99d387cd9b3253a3d92692df 100644 (file)
+--- a/lib/ldb/common/attrib_handlers.c
++++ b/lib/ldb/common/attrib_handlers.c
+@@ -76,7 +76,7 @@ int ldb_handler_fold(struct ldb_context *ldb, void *mem_ctx,
+        
+        /* remove leading spaces if any */
+        if (*s == ' ') {
+-               for (t = s; *s == ' '; s++) ;
++               for (t = s; *s == ' '; s++, l--) ;
+ 
+                /* remove leading spaces by moving down the string */
+                memmove(t, s, l);
