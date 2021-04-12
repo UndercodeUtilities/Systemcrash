@@ -1,6 +1,6 @@
 
 ## System crash is a collection of crash codes for pentesting, collected in one place, created by [Undercode](https://undercode.help)
-![Access List](https://imgur.com/cZEKg8y.png)
+![Access List](https://imgur.com/a1e5tIe.png)
 - - - 
 
 ### Install
@@ -23,7 +23,7 @@ git clone https://github.com/undercodeutilities/systemcrash.git
 
 This project is licensed under the [MIT license](LICENSE).
 
-![MIT License](https://imgur.com/cZEKg8y.png)
+![MIT License](https://imgur.com/x4vQC6O.png)
  
 - - - 
 
