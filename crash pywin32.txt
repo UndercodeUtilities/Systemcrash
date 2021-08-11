@@ -1,0 +1,11 @@
+Integer overflow in pywin32:
+
+When an ACL is resized to add an ACE, it is possible to craft an integer overflow targeting the calculated required_size. This results in a smaller than required buffer allocation which causes its memcpy of the ACL data to result in a heap overflow.
+
+Expected behavior and actual behavior
+
+Expected Behavior: Throw an exception indicating that the ACE could not be added because there is not enough room left in the ACL before hitting the size limit.
+Actual Behavior: The required_size is overflowed and the memcpy results in a heap overflow.
+Steps to reproduce the problem
+This was reproduced by adding roughly 1800 ACEs to an ACL. The exact count of ACEs that need to be added before reproducing the issue will vary based on the length of the SID in the ACE entry and the current size of the ACL being modified.
+Reproduction Goal: Add an ACE to an ACL such that the new size would be larger than 0xFFFF.
